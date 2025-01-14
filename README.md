@@ -1,5 +1,3 @@
-### **README.md**
-
 # Enable Serial Console Script
 
 ## Description
