@@ -14,7 +14,7 @@ Before running the script, you need to ensure that the VM has a **serial port** 
 2. Select your VM from the left-hand menu.
 3. Go to the **Hardware** tab.
 4. Click **Add > Serial Port**.
-5. Set **Port** to `0` and click **Add`.
+5. Set **Port** to `0` and click **Add**.
 6. Restart the VM.
 
 Once the serial port has been added, proceed with the steps below to configure the VM for serial console access.
