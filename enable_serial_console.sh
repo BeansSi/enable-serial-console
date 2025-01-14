@@ -64,4 +64,4 @@ else
     exit 1
 fi
 
-echo "!! Serial console activated! Please restart the VM to apply the changes. !!" | tee -a $LOGFILE
+echo "!! Serial console activated! Please reboot the VM to apply the changes. !!" | tee -a $LOGFILE
