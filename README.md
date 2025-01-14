@@ -26,7 +26,7 @@ Once the serial port has been added, proceed with the steps below to configure t
 #### **Option 1: Without sudo**
 
 ```bash
-wget https://raw.githubusercontent.com/BeansSi/test/main/enable_serial_console.sh
+wget https://raw.githubusercontent.com/BeansSi/enable-serial-console/main/enable_serial_console.sh
 chmod +x enable_serial_console.sh
 sudo ./enable_serial_console.sh
 ```
@@ -34,7 +34,7 @@ sudo ./enable_serial_console.sh
 #### **Option 2: Using sudo for download**
 
 ```bash
-sudo wget https://raw.githubusercontent.com/BeansSi/test/main/enable_serial_console.sh
+sudo wget https://raw.githubusercontent.com/BeansSi/enable-serial-console/main/enable_serial_console.sh
 sudo chmod +x enable_serial_console.sh
 sudo ./enable_serial_console.sh
 ```
