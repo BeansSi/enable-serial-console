@@ -2,44 +2,60 @@
 
 # Enable Serial Console Script
 
-## Beskrivelse
-Dette script konfigurerer en Ubuntu VM i Proxmox til at bruge en **serial console** via `ttyS0`. Dette gør det muligt at tilgå VM’en direkte via Proxmox-terminalen med kommandoen `qm terminal <VMID>`.
+## Description
+This script configures an Ubuntu VM running in Proxmox to use a **serial console** via `ttyS0`. This setup allows you to use the following Proxmox commands directly from the terminal:
 
-## Brugervejledning
+- `qm list`: Lists all virtual machines running on the Proxmox server.
+- `qm terminal <VMID>`: Opens a terminal session directly to the VM using its serial console.
 
-### Trin 1: Download og kør scriptet
+## Prerequisites
 
-Du kan nemt hente og køre scriptet fra dette public repository ved at bruge følgende kommandoer:
+Before running the script, you need to ensure that the VM has a **serial port** added in Proxmox:
+
+1. Open the Proxmox web interface.
+2. Select your VM from the left-hand menu.
+3. Go to the **Hardware** tab.
+4. Click **Add > Serial Port**.
+5. Set **Port** to `0` and click **Add`.
+6. Restart the VM.
+
+Once the serial port has been added, proceed with the steps below to configure the VM for serial console access.
+
+## Usage
+
+### Step 1: Download and run the script
+
+#### **Option 1: Without sudo**
+
 ```bash
-sudo wget https://raw.githubusercontent.com/BeansSi/test/main/enable_serial_console.sh
+wget https://raw.githubusercontent.com/BeansSi/test/main/enable_serial_console.sh
 chmod +x enable_serial_console.sh
 sudo ./enable_serial_console.sh
 ```
 
-### Trin 2: Automatisk download og kørsel i én kommando
-
-For at gøre det endnu nemmere kan du kombinere download og kørsel i én kommando:
+#### **Option 2: Using sudo for download**
 
 ```bash
-bash <(wget -qO- wget https://raw.githubusercontent.com/BeansSi/test/main/enable_serial_console.sh)
+sudo wget https://raw.githubusercontent.com/BeansSi/test/main/enable_serial_console.sh
+sudo chmod +x enable_serial_console.sh
+sudo ./enable_serial_console.sh
 ```
 
-## Bemærkninger
+In some environments, you may need to use `sudo` when downloading the script if you do not have write permissions in the current directory.
 
-- Sørg for at køre scriptet som **root** eller med **sudo**, da det kræver adgang til systemkonfigurationer.
-- Når scriptet er kørt, skal du genstarte VM’en for at anvende ændringerne.
-  
-  Genstart VM’en med:
+## Notes
+
+- Ensure that you run the script as **root** or with **sudo**, as it requires access to system configurations.
+- Once the script has run, you need to restart the VM for the changes to take effect.
+
+  You can restart the VM using:
   ```bash
   sudo reboot
   ```
 
-## Licens
-Dette script er udgivet under MIT-licensen. Du kan frit bruge, ændre og distribuere det.
-```
+## Purpose
 
----
+This script is useful for enabling direct terminal access to a VM in Proxmox using commands like `qm list` and `qm terminal <VMID>`. It simplifies management of virtual machines without needing to rely on the Proxmox web interface.
 
-Denne `README.md` kan kopieres direkte ind i dit public repository som dokumentation.
-
-Fortæl mig, hvis du vil have yderligere ændringer! 😊
+## License
+This script is released under the MIT license. You are free to use, modify, and distribute it.
