@@ -11,7 +11,7 @@ Dette script konfigurerer en Ubuntu VM i Proxmox til at bruge en **serial consol
 
 Du kan nemt hente og køre scriptet fra dette public repository ved at bruge følgende kommandoer:
 ```bash
-wget https://raw.githubusercontent.com/BeansSi/test/main/enable_serial_console.sh
+sudo wget https://raw.githubusercontent.com/BeansSi/test/main/enable_serial_console.sh
 chmod +x enable_serial_console.sh
 sudo ./enable_serial_console.sh
 ```
